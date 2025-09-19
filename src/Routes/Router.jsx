@@ -7,6 +7,7 @@ import Login from '../Pages/Login';
 import Home from '../Componants/Home';
 import AddFood from '../Componants/AddFood';
 
+
 const Router = createBrowserRouter([
   {
     path: "/",
@@ -18,6 +19,11 @@ const Router = createBrowserRouter([
       {
         path:'/addFood',
         element:<AddFood></AddFood>
+      },
+      {
+        path:'fridge',
+       
+        
       }
     ]
   },

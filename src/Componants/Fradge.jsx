@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Fridge = () => {
+const Fradge = () => {
     return (
         <div>
-            
+          
         </div>
     );
 };
 
-export default Fridge;
+export default Fradge;
