@@ -36,7 +36,7 @@ const AddFood = () => {
             })
     }
 
-    const hobbyCategories = [
+    const foodCategories = [
         "Dairy",
         "Meat",
         "Vegetables",
@@ -57,14 +57,14 @@ const AddFood = () => {
 
                 <fieldset className="fieldset bg-base-200 border rounded-box border-base-300 p-4 col-span-2">
                     <label className="label text-black font-semibold">Food title</label>
-                    <input type="text" name='foodName' className="input w-full" placeholder="Enter food name" required />
+                    <input type="text" name='foodTitile' className="input w-full" placeholder="Enter food name" required />
                 </fieldset>
 
                 <fieldset className="fieldset bg-base-200 border rounded-box border-base-300 p-4 col-span-2">
                     <label className="label text-black font-semibold">Food Category</label>
-                    <select name="hobbyCategory" className="select w-full" required>
+                    <select name="foodCategory" className="select w-full" required>
                         <option value="">Select a category</option>
-                        {hobbyCategories.map((cat, idx) => (
+                        {foodCategories.map((cat, idx) => (
                             <option key={idx} value={cat}>{cat}</option>
                         ))}
                     </select>
@@ -72,11 +72,11 @@ const AddFood = () => {
 
                 <fieldset className="fieldset bg-base-200 border rounded-box border-base-300 p-4">
                     <label className="label text-black font-semibold">Quantity</label>
-                    <input type="number" name='maxMembers' className="input w-full" placeholder="Max members" required />
+                    <input type="number" name='quantity' className="input w-full" placeholder="Quantity" required />
                 </fieldset>
                 <fieldset className="fieldset bg-base-200 border rounded-box border-base-300 p-4">
                     <label className="label text-black font-semibold">Expiry Date</label>
-                    <input type="date" name='startDate' className="input w-full" required />
+                    <input type="date" name='expiryDate' className="input w-full" required />
                 </fieldset>
 
                 <fieldset className="fieldset bg-base-200 border rounded-box border-base-300 p-4 col-span-2">
