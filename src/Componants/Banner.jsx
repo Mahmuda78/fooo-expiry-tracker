@@ -6,7 +6,7 @@ const Banner = () => {
 
   return (
     <div>
-      {/* Header */}
+     
       <div className="flex justify-between items-center p-4 bg-base-200 shadow">
     
         

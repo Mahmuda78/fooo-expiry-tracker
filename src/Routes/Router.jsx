@@ -5,6 +5,7 @@ import Register from '../Pages/register';
 
 import Login from '../Pages/Login';
 import Home from '../Componants/Home';
+import AddFood from '../Componants/AddFood';
 
 const Router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const Router = createBrowserRouter([
       {index:true,
         element:<Home></Home>
       },
+      {
+        path:'/addFood',
+        element:<AddFood></AddFood>
+      }
     ]
   },
   {
