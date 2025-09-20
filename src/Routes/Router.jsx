@@ -8,7 +8,8 @@ import Home from '../Componants/Home';
 import AddFood from '../Componants/AddFood';
 import Fridge from '../Componants/Fridge';
 import FoodDetails from '../Pages/FoodDetails';
-import { param } from 'framer-motion/client';
+
+import MyItems from '../Pages/MyItems';
 
 
 const Router = createBrowserRouter([
@@ -34,6 +35,10 @@ const Router = createBrowserRouter([
         loader:({params})=>fetch(`http://localhost:5000/foods/${params.id}`),
         element:<FoodDetails></FoodDetails>
         
+      },
+      {
+        path:'my-items',
+        element:<MyItems></MyItems>
       }
     ]
   },

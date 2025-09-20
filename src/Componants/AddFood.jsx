@@ -57,7 +57,7 @@ const AddFood = () => {
 
                 <fieldset className="fieldset bg-base-200 border rounded-box border-base-300 p-4 col-span-2">
                     <label className="label text-black font-semibold">Food title</label>
-                    <input type="text" name='foodTitile' className="input w-full" placeholder="Enter food name" required />
+                    <input type="text" name='foodTitle' className="input w-full" placeholder="Enter food name" required />
                 </fieldset>
 
                 <fieldset className="fieldset bg-base-200 border rounded-box border-base-300 p-4 col-span-2">
