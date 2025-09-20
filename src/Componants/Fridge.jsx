@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useLoaderData } from "react-router";
+import Loading from "../Pages/Loading";
 
 const Fridge = () => {
   const foods = useLoaderData();
@@ -61,7 +62,7 @@ const Fridge = () => {
       {/* Food Cards */}
       {currentFoods.length === 0 ? (
         <p className="text-center text-gray-500 italic">
-          No food items found.
+          No food items found.<Loading></Loading>
         </p>
       ) : (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

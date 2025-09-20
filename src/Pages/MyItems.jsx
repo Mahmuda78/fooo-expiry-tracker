@@ -2,6 +2,7 @@ import { use, useEffect, useState } from "react";
 
 import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthContext/AuthContext";
+import Loading from "./Loading";
 
 
 const MyItems = () => {
@@ -79,7 +80,7 @@ const MyItems = () => {
       });
   };
 
-  if (loading) return <p className="text-center mt-10">Loading...</p>;
+  if (loading) return <p className="text-center mt-10"><Loading></Loading></p>;
 
   return (
     <div className="p-5">
