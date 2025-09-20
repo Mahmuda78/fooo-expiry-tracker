@@ -9,7 +9,7 @@ const RecentlyAdd = () => {
   fiveDaysLater.setDate(today.getDate());
 
   useEffect(() => {
-    axios.get('http://localhost:5000/foods') 
+    axios.get('https://food-expire-server.vercel.app/foods') 
       .then(res => setFoods(res.data))
       .catch(err => console.error('Error fetching foods:', err));
   }, []);

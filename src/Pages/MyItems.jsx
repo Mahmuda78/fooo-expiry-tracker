@@ -14,7 +14,7 @@ const MyItems = () => {
   // fetch my items
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:5000/my-items/${user.email}`)
+      fetch(`https://food-expire-server.vercel.app/my-items/${user.email}`)
         .then((res) => res.json())
         .then((data) => {
            
@@ -35,7 +35,7 @@ const MyItems = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/foods/${id}`, {
+        fetch(`https://food-expire-server.vercel.app/foods/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -61,7 +61,7 @@ const MyItems = () => {
       description: form.description.value,
     };
 
-    fetch(`http://localhost:5000/foods/${selectedFood._id}`, {
+    fetch(`https://food-expire-server.vercel.app/foods/${selectedFood._id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedFood),

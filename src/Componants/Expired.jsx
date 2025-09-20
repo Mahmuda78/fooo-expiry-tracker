@@ -5,7 +5,7 @@ const Expired = () => {
   const [expiredFoods, setExpiredFoods] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/expired')
+    axios.get('https://food-expire-server.vercel.app/expired')
       .then(res => setExpiredFoods(res.data))
       .catch(err => console.error(err));
   }, []);

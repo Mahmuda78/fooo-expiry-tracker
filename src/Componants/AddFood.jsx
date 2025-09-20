@@ -18,7 +18,7 @@ const AddFood = () => {
         // console.log(newFood);
 
         
-        fetch('http://localhost:5000/foods', {
+        fetch('https://food-expire-server.vercel.app/foods', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

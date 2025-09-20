@@ -40,7 +40,7 @@ const FoodDetails = () => {
 
     try {
       const { data } = await axios.post(
-        `http://localhost:5000/foods/${food._id}/notes`,
+        `https://food-expire-server.vercel.app/foods/${food._id}/notes`,
         {
           userEmail: user.email, 
           text: note,
