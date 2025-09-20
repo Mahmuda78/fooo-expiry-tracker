@@ -11,6 +11,7 @@ import FoodDetails from '../Pages/FoodDetails';
 
 import MyItems from '../Pages/MyItems';
 import ErrorPage from '../Pages/ErrorPage';
+import PrivateRoute from '../Provider/PriveteRoute';
 
 
 const Router = createBrowserRouter([
@@ -23,7 +24,7 @@ const Router = createBrowserRouter([
       },
       {
         path:'/addFood',
-        element:<AddFood></AddFood>
+        element:<PrivateRoute><AddFood></AddFood></PrivateRoute>
       },
       {
         path:'fridge',
@@ -39,7 +40,7 @@ const Router = createBrowserRouter([
       },
       {
         path:'my-items',
-        element:<MyItems></MyItems>
+        element:<PrivateRoute><MyItems></MyItems></PrivateRoute>
       }
     ]
   },
