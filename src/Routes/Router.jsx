@@ -4,6 +4,7 @@ import MainLayout from '../Layout/mainLayout';
 import Register from '../Pages/register';
 
 import Login from '../Pages/Login';
+import FridgeTry from '../Pages/FridgeTry';
 import Home from '../Componants/Home';
 import AddFood from '../Componants/AddFood';
 import Fridge from '../Componants/Fridge';
@@ -49,7 +50,8 @@ const Router = createBrowserRouter([
   {
     path: "/login",
     element: <Login></Login>,
-  }
+  },
+ 
 ]);
 
 export default Router;
