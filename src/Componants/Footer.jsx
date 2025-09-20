@@ -14,8 +14,8 @@ const Footer = () => {
         <div className="flex flex-col items-start">
           <div className="flex items-center gap-2 mb-3">
             <img src={logo} alt="Logo" className="h-8" />
-            <p className="font-bold text-green-400 text-lg">
-              Food<span className="text-red-500">Expiry</span>Tracker
+            <p className="font-bold text-lg">
+              Food<span className="text-red-400">Expiry</span>Tracker
             </p>
           </div>
           <p className="text-gray-300 text-sm">
@@ -28,7 +28,7 @@ const Footer = () => {
 
       
         <div>
-          <h3 className="font-semibold mb-3 text-green-400">Useful Links</h3>
+          <h3 className="font-semibold mb-3">Useful Links</h3>
           <ul className="space-y-2 text-gray-300">
             <li>
               <NavLink to="/" className="hover:text-green-500">Home</NavLink>

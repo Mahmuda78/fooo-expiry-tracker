@@ -94,9 +94,9 @@ const Header = () => {
         <NavLink to="/" className="btn btn-ghost normal-case text-xl flex items-center gap-2">
   <img src={logo} alt="logo" className="h-8" />
   <p className=" hidden font-bold lg:block">
-    <span className="text-green-400">Food</span>
-    <span className="text-red-500">Expiry</span>
-    <span className="text-green-400">Tracker</span>
+    <span className="">Food</span>
+    <span className="text-red-400">Expiry</span>
+    <span className="">Tracker</span>
   </p>
 </NavLink>
 

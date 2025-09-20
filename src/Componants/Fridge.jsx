@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router";
+import { Link, useLoaderData } from "react-router";
 
 const Fridge = () => {
   const foods = useLoaderData();
@@ -13,11 +13,11 @@ const Fridge = () => {
   
 
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-gray-100">
       {foods.map(({ _id, foodTitle, quantity, imageUrl, foodCategory, expiryDate }) => (
         <div
           key={_id}
-          className={`card card-side shadow-sm ${
+          className={`card card-side shadow-lg border-2 border-gray-200 ${
             expiryDate < today ? "bg-red-50 border border-red-400" : "bg-base-100"
           }`}
         >
@@ -39,7 +39,7 @@ const Fridge = () => {
             <p>Category: {foodCategory}</p>
             
             <div className="card-actions justify-end">
-              <button className="btn btn-neutral btn-outline">Details</button>
+              <Link to={`/food/${_id}`}><button className="btn btn-neutral btn-outline">Details</button></Link>
             </div>
           </div>
         </div>

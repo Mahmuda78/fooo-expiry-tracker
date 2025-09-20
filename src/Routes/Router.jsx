@@ -7,6 +7,8 @@ import Login from '../Pages/Login';
 import Home from '../Componants/Home';
 import AddFood from '../Componants/AddFood';
 import Fridge from '../Componants/Fridge';
+import FoodDetails from '../Pages/FoodDetails';
+import { param } from 'framer-motion/client';
 
 
 const Router = createBrowserRouter([
@@ -25,6 +27,12 @@ const Router = createBrowserRouter([
         path:'fridge',
        element:<Fridge></Fridge>,
        loader:()=>fetch('http://localhost:5000/foods')
+        
+      },
+      {
+        path:'/food/:id',
+        loader:({params})=>fetch(`http://localhost:5000/foods/${params.id}`),
+        element:<FoodDetails></FoodDetails>
         
       }
     ]
