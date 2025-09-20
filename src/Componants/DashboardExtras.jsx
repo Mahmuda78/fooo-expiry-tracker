@@ -1,6 +1,6 @@
 
 import RecentlyAdd from "./RecentlyAdd";
-
+import Faq from "./Faq"
 
 
 const DashboardExtras = () => {
@@ -10,7 +10,7 @@ const DashboardExtras = () => {
     <div className="space-y-10 p-4">
         
         <RecentlyAdd></RecentlyAdd>
-
+        <Faq></Faq>
 
       
     </div>
