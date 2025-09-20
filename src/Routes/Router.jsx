@@ -6,6 +6,7 @@ import Register from '../Pages/register';
 import Login from '../Pages/Login';
 import Home from '../Componants/Home';
 import AddFood from '../Componants/AddFood';
+import Fridge from '../Componants/Fridge';
 
 
 const Router = createBrowserRouter([
@@ -22,7 +23,8 @@ const Router = createBrowserRouter([
       },
       {
         path:'fridge',
-       
+       element:<Fridge></Fridge>,
+       loader:()=>fetch('http://localhost:5000/foods')
         
       }
     ]
