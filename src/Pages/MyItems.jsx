@@ -2,7 +2,7 @@ import { use, useEffect, useState } from "react";
 
 import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthContext/AuthContext";
-import { data } from "react-router";
+
 
 const MyItems = () => {
   const { user } = use(AuthContext)
@@ -25,59 +25,59 @@ const MyItems = () => {
   }, [user?.email]);
 
   // delete item
-//   const handleDelete = (id) => {
-//     Swal.fire({
-//       title: "Are you sure?",
-//       text: "This food will be permanently deleted!",
-//       icon: "warning",
-//       showCancelButton: true,
-//       confirmButtonText: "Yes, delete it!",
-//     }).then((result) => {
-//       if (result.isConfirmed) {
-//         fetch(`http://localhost:5000/foods/${id}`, {
-//           method: "DELETE",
-//         })
-//           .then((res) => res.json())
-//           .then((data) => {
-//             if (data.deletedCount > 0) {
-//               Swal.fire("Deleted!", "Your food item has been deleted.", "success");
-//               setFoods(foods.filter((f) => f._id !== id));
-//             }
-//           });
-//       }
-//     });
-//   };
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "This food will be permanently deleted!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/foods/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your food item has been deleted.", "success");
+              setFoods(foods.filter((f) => f._id !== id));
+            }
+          });
+      }
+    });
+  };
 
   // update modal submit
-//   const handleUpdateSubmit = (e) => {
-//     e.preventDefault();
-//     const form = e.target;
-//     const updatedFood = {
-//       foodTitle: form.foodTitle.value,
-//       category: form.category.value,
-//       quantity: form.quantity.value,
-//       expiryDate: form.expiryDate.value,
-//       description: form.description.value,
-//     };
+  const handleUpdateSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const updatedFood = {
+      foodTitle: form.foodTitle.value,
+      category: form.category.value,
+      quantity: form.quantity.value,
+      expiryDate: form.expiryDate.value,
+      description: form.description.value,
+    };
 
-//     fetch(`http://localhost:5000/foods/${selectedFood._id}`, {
-//       method: "PUT",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify(updatedFood),
-//     })
-//       .then((res) => res.json())
-//       .then((data) => {
-//         if (data.modifiedCount > 0) {
-//           Swal.fire("Updated!", "Food information updated successfully.", "success");
-//           setFoods(
-//             foods.map((f) =>
-//               f._id === selectedFood._id ? { ...f, ...updatedFood } : f
-//             )
-//           );
-//           setSelectedFood(null); // modal close
-//         }
-//       });
-//   };
+    fetch(`http://localhost:5000/foods/${selectedFood._id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updatedFood),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          Swal.fire("Updated!", "Food information updated successfully.", "success");
+          setFoods(
+            foods.map((f) =>
+              f._id === selectedFood._id ? { ...f, ...updatedFood } : f
+            )
+          );
+          setSelectedFood(null); // modal close
+        }
+      });
+  };
 
   if (loading) return <p className="text-center mt-10">Loading...</p>;
 
@@ -115,13 +115,13 @@ const MyItems = () => {
                 <td>{new Date(food.expiryDate).toLocaleDateString()}</td>
                 <td>
                   <button
-                    // onClick={() => setSelectedFood(food)}
+                    onClick={() => setSelectedFood(food)}
                     className="btn btn-sm btn-info mr-2"
                   >
                     Update
                   </button>
                   <button
-                    // onClick={() => handleDelete(food._id)}
+                    onClick={() => handleDelete(food._id)}
                     className="btn btn-sm btn-error"
                   >
                     Delete
