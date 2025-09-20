@@ -1,11 +1,13 @@
 import React, { use } from 'react';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../Provider/AuthContext/AuthContext';
+import { useNavigate } from 'react-router';
 
 
 
 const AddFood = () => {
     const { user } = use(AuthContext);
+      const navigate = useNavigate();
     // console.log(user);
 
     const handleAddFood = e => {
@@ -25,16 +27,18 @@ const AddFood = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.insertedId) {
-                    Swal.fire({
-                        title: "Food created successfully!",
-                        icon: "success",
-                        draggable: true
-                    });
-                    form.reset();
-                }
-            })
-    }
+                if (data.insertedId)     if (data.insertedId) {
+          Swal.fire({
+            title: "Food created successfully!",
+            icon: "success",
+            draggable: true,
+          }).then(() => {
+            navigate("/my-items");
+          });
+          form.reset();
+        }
+      });
+  };
 
     const foodCategories = [
         "Dairy",
