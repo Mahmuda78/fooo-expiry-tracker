@@ -4,13 +4,13 @@ import MainLayout from '../Layout/mainLayout';
 import Register from '../Pages/register';
 
 import Login from '../Pages/Login';
-import FridgeTry from '../Pages/FridgeTry';
 import Home from '../Componants/Home';
 import AddFood from '../Componants/AddFood';
 import Fridge from '../Componants/Fridge';
 import FoodDetails from '../Pages/FoodDetails';
 
 import MyItems from '../Pages/MyItems';
+import ErrorPage from '../Pages/ErrorPage';
 
 
 const Router = createBrowserRouter([
@@ -51,6 +51,10 @@ const Router = createBrowserRouter([
     path: "/login",
     element: <Login></Login>,
   },
+  {
+    path:"*",
+    element:<ErrorPage></ErrorPage>
+  }
  
 ]);
 
